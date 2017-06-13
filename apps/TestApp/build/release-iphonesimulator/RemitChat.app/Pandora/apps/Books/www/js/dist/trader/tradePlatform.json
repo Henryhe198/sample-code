@@ -1,0 +1,176 @@
+﻿{
+  "tradePlatform": [
+    {
+      "platform": "FXTM富拓",
+      "headimg": "FXTM.png"
+    },
+    {
+      "platform": "Abshire-Smith",
+      "headimg": "Abshire-Smith.png"
+    },
+    {
+      "platform": "ActivTrades",
+      "headimg": "ActivTrades.png"
+    },
+    {
+      "platform": "ACY 稀万国际",
+      "headimg": "ACY.png"
+    },
+    {
+      "platform": "Alpari",
+      "headimg": "Alpari.png"
+    },
+    {
+      "platform": "ADS达汇",
+       "headimg": "ADS.png"
+    },
+    {
+      "platform": "ATC Brokers(UK)",
+      "headimg": "ATC.png"
+    },
+    {
+      "platform": "AVA",
+      "headimg": "AVA.png"
+    },
+    {
+      "platform": "EasyForex",
+      "headimg": "easy-forex.png"
+    },
+    {
+      "platform": "BMFN美国博美",
+      "headimg": "BMFN.png"
+    },
+    {
+      "platform": "EightCap",
+      "headimg": "EightCap.png"
+    },
+    {
+      "platform": "Exness",
+      "headimg": "Exness.png"
+    },
+    {
+      "platform": "ETXCapital",
+      "headimg": "ETX.png"
+    },
+    {
+      "platform": "FIBO飞博",
+      "headimg": "FIBO.png"
+    },
+    {
+      "platform": "Forex嘉盛",
+      "headimg": "Forex.png"
+    },
+    {
+      "platform": "FXCM福汇",
+      "headimg": "FXCM.png"
+    },
+    {
+      "platform": "FXDD",
+      "headimg": "FXDD.png"
+    },
+    {
+      "platform": "FxPro",
+      "headimg": "FxPro.png"
+    },
+    {
+      "platform": "GKFX捷凯",
+      "headimg": "GKFX.png"
+    },
+    {
+      "platform": "GMI",
+      "headimg": "GMI.png"
+    },
+    {
+      "platform": "澳洲GCG",
+      "headimg": "GCG.png"
+    },
+    {
+      "platform": "HY兴业投资",
+      "headimg": "HY.png"
+    },
+    {
+      "platform": "Hantec亨达",
+      "headimg": "Hantec.png"
+    },
+    {
+      "platform": "GMO技慕环球通",
+      "headimg": "GMO.png"
+    },
+    {
+      "platform": "ICMarkets",
+      "headimg": "ICMarkets.png"
+    },
+    {
+      "platform": "KAB三甲金融",
+      "headimg": "KAB.png"
+    },
+    {
+      "platform": "FXOpen",
+      "headimg": "FXOpen.png"
+    },
+    {
+      "platform": "RoboForexEU",
+      "headimg": "RoboForexEU.png"
+    },
+    {
+      "platform": "Orbex",
+      "headimg": "Orbex.png"
+    },
+    {
+      "platform": "OANDA万达",
+      "headimg": "OANDA.png"
+    },
+    {
+      "platform": "SVSFX",
+      "headimg": "SVSFX.png"
+    },
+    {
+      "platform": "Swissquote",
+      "headimg": "Swissquote.png"
+    },
+    {
+      "platform": "AFX-STO",
+      "headimg": "AFX-STO.png"
+    },
+    {
+      "platform": "USGFX",
+      "headimg": "USGFX.png"
+    },
+    {
+      "platform": "ThinkForex",
+      "headimg": "ThinkForex.png"
+    },
+    {
+      "platform": "Tri拓利",
+      "headimg": "Tri.png"
+    },
+    {
+      "platform": "Vantage万致",
+       "headimg": "Vantage.png"
+    },
+    {
+      "platform": "XM",
+       "headimg": "XM.png"
+    },
+    {
+      "platform": "Weltrade",
+      "headimg": "Weltrade.png"
+    },
+    {
+      "platform": "KVB昆仑国际",
+      "headimg": "KVB.png"
+    },
+    {
+      "platform": "ICM英国艾森",
+       "headimg": "ICM.png"
+    },
+    {
+      "platform": "澳洲百汇Bacera",
+      "headimg": "Bacera.png"
+    },
+    {
+      "platform": "温莎Windsor",
+      "headimg": "Windsor.png"
+    }
+  ]
+}

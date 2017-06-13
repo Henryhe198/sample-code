@@ -1,0 +1,63 @@
+{
+	"index.html": {
+		"resources": [
+			"js/gulp/mui/mui.min.js",
+			"Views/booksIndex.html",
+			"fonts/mui.ttf",
+			"css/dist/booksIndex.css",
+			"css/gulp/mui.min.css",
+			"js/gulp/adaptation/adaptation_10.js"
+		],
+		"refer": [
+			"index-menu.html",
+			"Views/booksIndex.html"
+		]
+	},
+	"Views/booksIndex.html": {
+		"resources": [
+			"js/dist/books/booksIndex.js",
+			"js/gulp/adaptation/adaptation_10.js",
+			"img/books/star-real.png",
+			"img/error/network_icon.png",
+			"img/books/star-gray.png",
+			"js/gulp/consts/Config.js",
+			"js/gulp/consts/const.js",
+			"img/icon/loading.gif",
+			"js/require.js",
+			"css/dist/booksIndex.css",
+			"js/gulp/mui/mui.js",
+			"css/gulp/mui.min.css",
+			"img/books/search.png",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"Views/booksIntroduction.html",
+			"Views/booksList.html"
+		]
+	},
+	"index-menu.html": {
+		"resources": [
+			"js/gulp/mui/mui.min.js",
+			"fonts/mui.ttf",
+			"css/dist/booksIndex.css",
+			"css/gulp/mui.min.css",
+			"js/gulp/adaptation/adaptation_10.js"
+		],
+		"refer": []
+	},
+	"Views/booksList.html": {
+		"resources": [
+			"js/gulp/adaptation/adaptation_10.js",
+			"js/dist/books/booksList.js",
+			"css/dist/booksList.css",
+			"js/gulp/consts/Config.js",
+			"js/gulp/consts/const.js",
+			"js/require.js",
+			"css/gulp/mui.min.css",
+			"img/books/star-real.png",
+			"img/books/star-gray.png",
+			"fonts/mui.ttf",
+			"img/icon/loading.gif"
+		]
+	}
+}

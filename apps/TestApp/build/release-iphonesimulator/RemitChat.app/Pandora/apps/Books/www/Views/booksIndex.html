@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>书籍首页</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/gulp/mui.min.css" rel="stylesheet" type="text/css">
+		<link href="../css/dist/booksIndex.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="../js/gulp/mui/mui.js"></script>
+		<script src="../js/require.js" data-main="../js/dist/books/booksIndex.js"></script>
+		<script type="text/javascript" src="../js/gulp/adaptation/adaptation_10.js?t=2"></script>
+		<script type="text/javascript" src="../js/gulp/consts/const.js"></script>
+	</head>
+
+	<body id="booksVue">
+		<div class="search-input" id="search2">
+			<div class="mui-input-row ct-search w100">
+				<input type="search" id="search" class="mui-input-clear" maxlength="12" placeholder="书名/作者">
+			</div>
+			<a class="ct-search-close" style="display: none;">取消</a>
+		</div>
+		<div class="indexHtml">
+			<div class="ct-books-box" v-cloak>
+				<div class="main-title">
+					<p>热门推荐</p>
+				</div>
+				<div class="ct-scroll-01 ct-scr-padd ct-scr-height" >
+					<div class="mui-scroll-01">
+						<div id="no-loading" v-if="booksHot.length==0"><img src="../img/icon/loading.gif" /></div>
+						<div class="ct-scroll-content">
+							<div class="ct-src-right" v-for="item in booksHot" v-bind:data-id="item.BookId">
+								<img v-bind:src="item.CoverImage">
+								<h2 class="mui-ellipsis">{{item.BookName}}</h2>
+								<p class="mui-ellipsis">{{item.Author}}</p>
+								<div class="ct-img-strat">
+									<img v-for="n in item.RecommendStar" src="../img/books/star-real.png"><img v-for="n in 5-item.RecommendStar" src="../img/books/star-gray.png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+			</div>
+			<div class="ct-books-box" v-cloak>
+				<div class="main-title">
+					<p>新品速递</p>
+				</div>
+				<div class="ct-scroll-01 ct-scr-padd ct-scr-height">
+					<div class="mui-scroll-01">
+						<div id="no-loading" v-if="booksNews.length==0"><img src="../img/icon/loading.gif" /></div>
+						<div class="ct-scroll-content">
+							<div class="ct-src-right" v-for="item in booksNews" v-bind:data-id="item.BookId">
+								<img v-bind:src="item.CoverImage">
+								<h2 class="mui-ellipsis">{{item.BookName}}</h2>
+								<p class="mui-ellipsis">{{item.Author}}</p>
+								<div class="ct-img-strat">
+									<img v-for="n in item.RecommendStar" src="../img/books/star-real.png"><img v-for="n in 5-item.RecommendStar" src="../img/books/star-gray.png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ct-books-hot" v-if="booksFinance.length>0" v-cloak>
+				<div class="main-title">
+					<p>热门财经</p>
+					<em class="view-more" data-id="7">更多<i class="mui-icon mui-icon-arrowright ct-books-posi"></i></em>
+				</div>
+				<div class="first-detail" v-for="item in booksFinance" v-if="$index==0">
+					<div class="first-img" v-bind:data-id="item.BookId"><img v-bind:src="item.CoverImage"></div>
+					<div class="first-con">
+						<div class="first-title">
+							<h3>{{item.BookName}}</h3>
+							<div class="star-union"><img v-for="n in item.RecommendStar" src="../img/books/star-real.png"><img v-for="n in 5-item.RecommendStar" src="../img/books/star-gray.png"></div>
+						</div>
+						<p>{{item.Summary}}</p>
+					</div>
+				</div>
+				<ul class="book-show">
+					<li v-for="item in booksFinance" v-if="$index>0" v-bind:data-id="item.BookId">
+						<img v-bind:src="item.CoverImage" class="book-item">
+						<h2>{{item.BookName}}</h2>
+						<p>{{item.Author}}</p>
+					</li>
+				</ul>
+			</div>
+			<div class="ct-books-hot" v-if="booksBasis.length>0" v-cloak>
+				<div class="main-title">
+					<p>基础入门学习</p>
+					<em class="view-more" data-id="1">更多<i class="mui-icon mui-icon-arrowright ct-books-posi"></i></em>
+				</div>
+				<ul class="book-show">
+					<li v-for="item in booksBasis" v-bind:data-id="item.BookId">
+						<img v-bind:src="item.CoverImage" class="book-item">
+						<h2>{{item.BookName}}</h2>
+						<p>{{item.Author}}</p>
+					</li>
+				</ul>
+			</div>
+			<div class="ct-books-hot" v-if="booksEconomic.length>0" v-cloak>
+				<div class="main-title">
+					<p>基本经济指标</p>
+					<em class="view-more" data-id="2">更多<i class="mui-icon mui-icon-arrowright ct-books-posi"></i></em>
+				</div>
+				<ul class="book-show">
+					<li v-for="item in booksEconomic" v-bind:data-id="item.BookId">
+						<img v-bind:src="item.CoverImage" class="book-item">
+						<h2>{{item.BookName}}</h2>
+						<p>{{item.Author}}</p>
+					</li>
+				</ul>
+			</div>
+			<div class="ct-books-hot" v-if="booksTechnology.length>0" v-cloak>
+				<div class="main-title">
+					<p>技术综合提升</p>
+					<em class="view-more" data-id="3">更多<i class="mui-icon mui-icon-arrowright ct-books-posi"></i></em>
+				</div>
+				<ul class="book-show">
+					<li v-for="item in booksTechnology" v-bind:data-id="item.BookId">
+						<img v-bind:src="item.CoverImage" class="book-item">
+						<h2>{{item.BookName}}</h2>
+						<p>{{item.Author}}</p>
+					</li>
+				</ul>
+			</div>
+			<div class="ct-books-hot" v-if="booksMoney.length>0" v-cloak>
+				<div class="main-title">
+					<p>心态和资金管理</p>
+					<em class="view-more" data-id="4">更多<i class="mui-icon mui-icon-arrowright ct-books-posi"></i></em>
+				</div>
+				<ul class="book-show">
+					<li v-for="item in booksMoney" v-bind:data-id="item.BookId">
+						<img v-bind:src="item.CoverImage" class="book-item">
+						<h2>{{item.BookName}}</h2>
+						<p>{{item.Author}}</p>
+					</li>
+				</ul>
+			</div>
+			<div class="ct-books-hot" v-if="booksShort.length>0" v-cloak>
+				<div class="main-title">
+					<p>短线交易学习</p>
+					<em class="view-more" data-id="5">更多<i class="mui-icon mui-icon-arrowright ct-books-posi"></i></em>
+				</div>
+				<ul class="book-show">
+					<li v-for="item in booksShort" v-bind:data-id="item.BookId">
+						<img v-bind:src="item.CoverImage" class="book-item">
+						<h2>{{item.BookName}}</h2>
+						<p>{{item.Author}}</p>
+					</li>
+				</ul>
+			</div>
+			<div class="ct-books-hot" v-if="booksGold.length>0" v-cloak>
+				<div class="main-title">
+					<p>黄金白银</p>
+					<em class="view-more" data-id="6">更多<i class="mui-icon mui-icon-arrowright ct-books-posi"></i></em>
+				</div>
+				<ul class="book-show">
+					<li v-for="item in booksGold" v-bind:data-id="item.BookId">
+						<img v-bind:src="item.CoverImage" class="book-item">
+						<h2>{{item.BookName}}</h2>
+						<p>{{item.Author}}</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="searchHtml" style="display: none;" id="books">
+			<div class="search-content" v-cloak>
+				<div class="searchTips" v-if="booksSearch.length == 0">请输入搜索关键词！</div>
+				<ul id="search-item" v-if="booksSearch.length != 0">
+					<li v-for="item in booksSearch" v-bind:data-id="item.BookId">
+						<div class="search-border">
+							<div class="search-pic"><img v-bind:src="item.CoverImage"></div>
+							<div class="search-detail">
+								<h2>{{item.BookName}}</h2>
+								<h6>{{item.Author}}</h6>
+								<div class="star-union clearfix"><img v-for="n in item.RecommendStar" src="../img/books/star-real.png"><img v-for="n in 5-item.RecommendStar" src="../img/books/star-gray.png"></div><span>推荐度</span>
+								<p>{{item.Summary}}</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,52 @@
+{
+	"bank" : [{
+		"text":"中国银行",
+		"currencyId":2
+	},{
+		"text":"工商银行",
+		"currencyId":1
+	},{
+		"text":"农业银行",
+		"currencyId":3
+	},{
+		"text":"交通银行",
+		"currencyId":4
+	},{
+		"text":"建设银行",
+		"currencyId":5
+	},{
+		"text":"招商银行",
+		"currencyId":6
+	}],
+	"currency" : [{
+		"text":"美元",
+		"currencyId":1
+	},{
+		"text":"加元",
+		"currencyId":2
+	},{
+		"text":"欧元",
+		"currencyId":3
+	},{
+		"text":"英镑",
+		"currencyId":4
+	},{
+		"text":"日元",
+		"currencyId":5
+	},{
+		"text":"澳元",
+		"currencyId":20
+	},{
+		"text":"瑞郎",
+		"currencyId":7
+	},{
+		"text":"新加坡元",
+		"currencyId":8
+	},{
+		"text":"港币",
+		"currencyId":9
+	},{
+		"text":"人民币",
+		"currencyId":24
+	}]
+}

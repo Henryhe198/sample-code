@@ -1,0 +1,81 @@
+@import (reference) "../../gulp/Animation.less"; 
+@import (less) "../../gulp/public.less"; 
+@import (less) "../../gulp/loadMore.less";
+// 变量定义
+@font_size:1.4rem; //字体初始大小
+@title_color:#333A4F; //标题颜色
+@content_color:#545A64;// 内容颜色
+@hui_color:#acb2c1;
+@gray:#909090;
+@line_color:#ddd;
+@top_height:50px;
+body{ font-family: sans-serif; background: #fff;}
+.book-cont{ width:100%; height:100%; color:@content_color;
+    .book-top{ position:fixed; left:0; top:0; .box-shadow(0,2px,2px,#ddd); z-index:91;background-color:#fff; height: @top_height; padding-top: 3px;
+        a{  
+            span.ct-head-font-color{color:#999;}
+            em{ position:absolute; top:6px; right:4px; background:red; color:#fff; height:1.2rem; line-height:1.2rem;  padding:0 .2rem; max-width:3.3rem;
+                    text-align:center; .border-radius(20%); font-size:@font_size - .4;}
+        }
+        a.ct-head-a{color:@content_color !important; margin-right: 0 !important;}
+        h1.ct-head-title{color:@title_color !important; left: 60px !important; right: 60px !important;}
+        a.ct-click-xq{color:#999 !important;}
+    }
+    .book-content{ width:100%; height:100%; position:relative; background: #fff;
+        .content-box,.ct-scroll{ top:4rem; left:0; .box-sizing(); position:absolute; overflow:hidden; right:0; bottom:4rem; background: #fff;}
+        .book-bar{ width:100%; height:4rem; padding:0 2rem; line-height:4rem; color:@gray; overflow:hidden; .box-sizing(); position:fixed; top:0; left:0;
+            h3{ font-size:@font_size + .1; .over_group(); line-height:4rem;}
+        }
+        .ct-back-scr{top: 4rem; bottom: 4rem; background: #fff;}
+        .book-html-cont{ font-size:@font_size + .3; line-height:180%; text-align:justify; padding: 2rem; background: #fff;
+            img{ max-width:100%;}
+            p{ padding:.4rem 0; text-indent:2em; font-size:@font_size + .5; color: @content_color;
+               &>img:first-child,&>a>img:first-child{ position: relative; left: -2em;}
+               &>span{ font-size:@font_size !important;}
+            }
+            &.aamin{ font-size:@font_size + .2;
+                p{ font-size:@font_size + .2;}
+            }
+            &.aamax{ font-size:@font_size + .8;
+                p{ font-size:@font_size + .8;}
+            }
+            h2{ font-size:2.8rem; line-height:180%;}
+        }
+        
+        .book-bar2{ width:100%; height:4rem; padding:0 2rem; color:@gray; line-height:4rem; overflow:hidden; position:fixed; bottom:0; left:0; .box-sizing();
+            .book-num{ font-size:@font_size + .1; text-align:right;}
+        }
+    }
+    .book-bottom{ position:fixed; left:0; z-index:91; bottom:0; width:100%; height:@top_height; background:#fff; .box-shadow(0,-2px,2px,#ddd); font-size:16px; color:@hui_color;
+        .book-directory{ position:absolute; left:1.5rem; top:0; height:@top_height; line-height:@top_height;
+            a{ color:@gray;}
+            img{ width:1.4rem; vertical-align:middle; margin-right:.4rem;}
+        }
+        .book-font{ width:50%; margin:0 auto; height:@top_height; line-height:@top_height; text-align:center; .over_group();}
+        .book-night{ position:absolute; right:1.5rem; top:0; height:@top_height; line-height:@top_height;}
+        .book-aa{ position:absolute; bottom:@top_height; left:25%; width:50%; text-align:center; .box-shadow(0,0,4px,@line_color); background: #fff;
+            li{ height:4rem; line-height:4rem; border-bottom:1px #eee solid;}
+            li:last-child{ border-bottom:none;}
+        }
+    }
+
+    &.black{ background:#222; color:#999;
+        .book-content{
+            .ct-scroll{ background:#222;}
+            .book-bar{ background:#222;}
+            .book-bar2{ background:#222;}
+        }
+        .book-html-cont{ background:#222;}
+        .ct-back-scr{background: #222;}
+    }
+}
+.addContent{ padding:1rem 0;}
+
+.mui-icon-pulldown:before{ content: "";} 
+.mui-pull{ font-weight: normal; color: @gray;}
+.ct-css-title{font-size: 2.2rem; font-weight:bold;}
+.ct-back{font-size:16px !important;
+    span{font-size:26px !important; font-weight: 100 !important;}
+    }
+.mui-off-canvas-backdrop{background: rgba(0,0,0,.2) !important; box-shadow: -4px 0 4px rgba(0,0,0,.1),4px 0 4px rgba(0,0,0,.1) !important;}
+.mui-scroll{-webkit-transform:transition3d(0,0,0)}

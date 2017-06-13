@@ -1,0 +1,138 @@
+@import (reference) "../../gulp/Animation.less"; 
+@import (less) "../../gulp/public.less"; 
+//@import (less) "../../gulp/Animation.less";
+@font_size:1rem; //字体初始大小
+@line_height:1.2rem;//行高
+@spacing:1rem;//间距
+@title_color:#333A4F; //标题颜色
+@content_color:#545A64; // 内容颜色
+@gray:#909090;
+@blue:#2ea9df;
+@bgcolor:#f7f7f7;//背景颜色
+@default-size:1rem;
+body{background-color: #f7f7f7; height: 100%;}
+.ct-css-title{font-size: 2.2rem; font-weight:bold;}
+.ct-back{font-size:16px !important;
+    span{font-size:26px !important; font-weight: 100 !important;}
+    }
+.ct-wrapp-bacolor{ background-color: #fff;
+    .ct-title-border{ border-bottom: 1px solid #ddd;}
+}
+.ct-head-blue{ background-color:#fff;
+    a{  
+        span.ct-head-font-color{color:@content_color;}
+    }
+    a.ct-head-a{color:@content_color !important;}
+    h1.ct-head-title{color:@title_color !important;}
+}
+.ct-back-scr{ background: @bgcolor;}
+.book_sty{ padding:@spacing + 1 @spacing + .5 @spacing + .5 @spacing + .5; border-bottom:@spacing solid #f7f7f8;overflow:hidden; background: #fff;
+    .book_main{ width:100%; position:relative;  padding-bottom:@spacing;
+        .book_img{ position:absolute; left:0; top:0;
+            img{width:@spacing + 6.4; box-shadow:0px 2px 15px #b9becb;}
+        }
+        .introduction{ padding-left:@spacing + 7.6;color:@gray;
+            h2{ font-size:@font_size + .8; color:#333a4f; max-height:@spacing + 2.9; overflow:hidden; line-height:@spacing + 1;}
+            .at_name{color:@gray; font-size:@font_size + .6; margin:@spacing - .4 0; line-height:@spacing + .8; overflow:hidden; text-overflow:ellipsis;white-space:nowrap;}
+            .book_recommend{font-size:@font_size + .6;line-height:@spacing + .7; overflow:hidden;
+                img{width:@spacing + .2; margin-right:@spacing - .7;}
+            }
+            .book_comment{ font-size:@font_size + .6; margin-top:0.6rem; background:url(../../img/books/comment.png)no-repeat 3px 3px;padding-left:@spacing + 1.2;background-size:@spacing + .5 auto;
+            }
+        }
+    }
+}
+.book_introduction_content{ padding:1rem; overflow:hidden; background: #fff;
+    .book_introduction{ color:@content_color; font-size:@font_size + .5;overflow:hidden;
+        .introduction_img{ text-align:center;margin-bottom:@spacing - .5;overflow:hidden;
+            img{width:@spacing + 3.5;}
+        }
+        p{line-height:@spacing + 1.4; font-size:@font_size + .5;}
+    }
+    .book_more p{height:@spacing + 8.45; overflow:hidden;}
+}
+.book_catalog{ padding:0 1rem;color:#333a4f;position:relative; background: #fff; padding-top: 1rem; margin-top: 1rem;
+    h2{font-size:@font_size + .7; margin:@spacing 0 @spacing 0;}
+    .book_chapter{
+        h3{ font-size:@font_size + .6; padding-left:@spacing;line-height:@spacing + 1.9;position:relative;
+            span{ position:absolute; left:0; top:@spacing - .4; display:block;width:2px; height:@spacing + 0.5; border-left:2px solid #2ea9df;}
+        }
+        ul{ padding-left:@spacing + 1.4;
+            li{ font-size:@font_size + .5; color:#545a64;  list-style:disc; line-height:@spacing + 1.9;
+              i{padding-right:@spacing - .5;}
+           }
+        }
+    }
+    .book_more{ height:@spacing + 13.3; overflow:hidden;}
+    .book_click_show{ text-align:center; margin:@spacing - .2 0; overflow:hidden; color:#46b3e3; height:@spacing + 1.5;
+        i{ display:block; height:@spacing + 1.5; margin:@spacing - .5 auto;background:url(/Images/books/poze_b_icon.png) no-repeat center center; background-size:1.7rem;}
+        i.click_show_active{background:url(/Images/books/poze_s_icon.png) no-repeat center center; background-size:1.7rem;}
+    }   
+}
+.book_comment_aots{ padding:1rem; background: #fff; margin-top: 1rem; padding-right: 0;
+    h2{ font-size:@font_size + .7; color:#333a4f;margin:1rem 0;}
+    .comment_read{ position:relative;
+        img{ position:absolute; left:0; top:0; width:@spacing + 3; height:@spacing + 3; border-radius:100%; }
+        .comment{ border-bottom:1px solid #f0f0f0; padding:@spacing - .4 @spacing + .3 @spacing + .4  0; margin-top:@spacing + .3;
+            h3{ font-size:@font_size + .6;padding-left:@spacing + 3.9;
+                i{font-size:@font_size + .3; color:@gray; margin-left:@spacing - .5;}
+                span{ float:right; background:url(../../img/books/zambia.png) no-repeat 1px 1px; display:block; text-align:right;  background-size:@spacing + .4 auto; font-size:@font_size + .3; height: @spacing + .7;  color:@gray; line-height:@spacing + 1; position:relative; padding-left:@spacing + .8;
+                    .book_jiayi{ position:absolute; left:0; width:@spacing + 2; height:@spacing + .7; background:#2ea9df; color:#fff; border-radius:4px; text-align:center; line-height:@spacing + .6; opacity:0;display:block;
+                    }
+                }
+            }
+            p{ margin-top:@spacing - .4;  font-size:@font_size + .5; color:#545a64; overflow:hidden;padding-left:@spacing + 3.9;line-height:@spacing + 1.4;}
+            p.activeshow{max-height:@spacing + 8.5;}
+            .active_icon{display:block!important; background-size:@spacing + .7;}
+            .active_s_icon{ background-size:@spacing + .7;}            
+            .commetn_icon_show{ text-align:center; overflow:hidden; color:#46b3e3;  height:@spacing + 1; display:none;margin-top:@spacing - .7;}            
+        }
+    }
+    .book_ment_nocomment{ background:url(../../img/books/book_information.png) no-repeat 0 center; background-size:@spacing + 3.5; overflow:hidden; color:#909090;margin-left:5rem;height:@spacing + 3.5; padding:@spacing + 1 0; width:@spacing + 15; margin:0 auto;
+        h2{font-size:@font_size + .4; padding-left:@spacing + 5; margin-bottom:0; color:#909090; margin-top:@spacing - 0.5;}
+        h3{font-size:@font_size + .4; padding-left:@spacing + 5;line-height:@spacing + 1.1;}
+    }
+    .book_ment_more{ margin:0 auto; border:1px solid #2ea9df; color:#2ea9df;  border-radius:50px; width:@spacing + 7; height:@spacing + 1.4; font-size:@font_size + .4; line-height:@spacing + 1.4; text-align:center; margin-top:@spacing + .5;
+        a{display:block; color:#2ea9df;}
+    }
+    .book_ment_publish{ margin:0 auto; border:1px solid #2ea9df; color:#2ea9df;  border-radius:50px; width:@spacing + 7; height:@spacing + 1.4; font-size:@font_size + .4; line-height:@spacing + 1.4; text-align:center; margin-top:@spacing + .5;
+        a{display:block; color:#2ea9df;}
+    }
+}
+.book_relevant{ height:auto;width:100%; background: #fff; margin-top: 1rem;
+    h2{font-size:@font_size + .7; padding:@spacing + .5 0 @spacing + .2 @spacing + .5; }
+    .book_rele_show{ padding-bottom:@spacing + 4; overflow:hidden;
+        ul{ height:auto; overflow:hidden;
+            li{ float:left; margin: @spacing - .4 3.1%; width:27%; overflow:hidden; text-align:center;
+                a{display:block;}
+                img{width:8.3rem; height:11rem; max-width:100%;}
+                h3{font-size:@font_size + .5; width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+                span{ display:block; font-size:@font_size + .3; color:@gray; width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+            }
+        }
+    }
+
+}
+.book_click_incon{ text-align:center; color:#46b3e3; background: #fff; padding: 1rem 0;}
+.book_click_inconajx{ text-align:center; color:#46b3e3; background: #fff; padding: 1rem 0;}
+
+#book_reading{ position:fixed; left:0; bottom:0; height:@spacing + 3; font-size:@font_size + .9; line-height:@spacing + 2.9; text-align:center; background:#2EA9DF; width:100%; color:#fff; z-index: 99;
+        a{display:block; color:#fff;}
+}
+
+.animation{
+    animation:myfirst 0.8s;
+}
+@keyframes myfirst
+{
+10% {opacity:0.9; top:-@spacing - .2}
+20% {opacity:0.8; top:-@spacing - .4}
+30% {opacity:0.7; top:-@spacing - .5}
+40% {opacity:0.6; top:-@spacing - .6}
+50% {opacity:0.5; top:-@spacing - .8}
+60% {opacity:0.4; top:-@spacing - 1}
+70% {opacity:0.3; top:-@spacing - 1.2}
+80% {opacity:0.2; top:-@spacing - 1.4}
+90% {opacity:0.1; top:-@spacing - 1.5}
+100% {opacity:0; top:-@spacing - 1.5}
+}

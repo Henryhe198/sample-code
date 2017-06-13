@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>书籍列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/gulp/mui.min.css" rel="stylesheet" type="text/css">
+		<link href="../css/dist/booksList.css" rel="stylesheet" type="text/css">
+		<script src="../js/require.js" data-main="../js/dist/books/booksList.js"></script>
+		<script type="text/javascript" src="../js/gulp/adaptation/adaptation_10.js"></script>
+		<script type="text/javascript" src="../js/gulp/consts/const.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav  ct-head-blue">
+			<a class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left ct-head-a ct-back">
+				<span class="mui-icon mui-icon-left-nav ct-head-font-color"></span>返回
+			</a>
+			<h1 class="mui-title ct-head-title ct-css-title"></h1>
+		</header>
+
+		<div class="mui-content mui-scroll-wrapper ct-back-scr ct-scroll" id="books">
+			<div class="mui-scroll">
+				<div class="main_content" v-cloak>
+					<div id="no-loading" v-if="booksList.length==0"><img src="../img/icon/loading.gif" /></div>
+					<div class="book_show" v-for="item in booksList" v-bind:data-id="item.BookId">
+						<div class="book_bor_bot">
+							<div class="book_list">
+								<div class="book_img"><img v-bind:src="item.CoverImage"></div>
+								<div class="book_content">
+									<h2>{{item.BookName}}</h2><span>{{item.Author}}</span><i class="book_stars_a"><img v-for="n in item.RecommendStar" src="../img/books/star-real.png"><img v-for="n in 5-item.RecommendStar" src="../img/books/star-gray.png">推荐度</i>
+									<p>{{item.Summary}}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

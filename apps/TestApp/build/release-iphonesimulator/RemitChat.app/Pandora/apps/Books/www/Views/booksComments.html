@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>书籍评论</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/gulp/mui.min.css" rel="stylesheet" type="text/css">
+		<link href="../../css/dist/booksComments.css" rel="stylesheet" type="text/css">
+		<script src="../../js/require.js" data-main="../../js/dist/books/booksComments.js"></script>
+		<script type="text/javascript" src="../../js/gulp/adaptation/adaptation_10.js"></script>
+		<script type="text/javascript" src="../../js/gulp/consts/const.js"></script>
+	</head>
+	<body style="display: none;">
+		<header class="mui-bar mui-bar-nav ct-head-blue">
+			<a class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left ct-head-a ct-back">
+				<span class="mui-icon mui-icon-left-nav ct-head-font-color"></span>返回
+			</a>
+			<h1 class="mui-title ct-head-title ct-css-title">书籍评论</h1>
+		</header>
+		<span class="mui-progressbar mui-progressbar-in" id="domBar" style="z-index: 999;"><span style="background: #2EA9DF;"></span></span>				
+		<div class="mui-content mui-scroll-wrapper ct-back-scr ct-scroll" id="books">
+			<div class="mui-scroll"> 
+       			<div class="book_comment_aots">
+       				<div class="ajax_read" v-cloak>
+       					<div id="no-loading" v-if="booksComments.length==0"><img src="../../img/icon/loading.gif" /></div>
+						<div class="comment_read" v-for="item in booksComments" v-bind:data-commentid="item.CommentId">
+							<img v-bind:src="item.UserHeadImg">
+							<div class="comment">
+								<h3 class="name">{{item.UserName}}<i>{{item.AddTime|time}}</i>
+									<span class="book_zag">
+										<em v-if="item.Supports>0">{{item.Supports}}</em>
+										<strong class="book_jiayi">+1</strong>
+									</span>
+								</h3>
+								<p class="activeshow"><span>{{item.Content}}</span></p>
+								<div class="commetn_icon_show"><i class="mui-icon mui-icon-arrowdown"></i></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="publish_comment"><img src="/img/books/publish_comment.png" /></div>
+	</body>
+</html>

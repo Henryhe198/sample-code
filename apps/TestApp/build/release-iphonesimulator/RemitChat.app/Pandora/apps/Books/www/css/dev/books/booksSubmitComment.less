@@ -1,0 +1,32 @@
+@import (reference) "../../gulp/Animation.less"; 
+@import (less) "../../gulp/public.less";
+@font_size:1rem; //字体初始大小
+@line_height:1.2rem;//行高
+@spacing:1rem;//间距
+@title_color:#333A4F; //标题颜色
+@content_color:#545A64; // 内容颜色
+@gray:#909090;
+@blue:#2ea9df;
+@bgcolor:#f7f7f7;//背景颜色
+@default-size:1rem;
+body{background-color: #fff; overflow: hidden;}
+.ct-css-title{font-size: 2.2rem; font-weight:bold;}
+.ct-back{font-size:16px !important;
+    span{font-size:26px !important; font-weight: 100 !important;}
+    }
+.mui-content{ background-color:#fff;}
+//发表评论
+.ct-head-blue{ background-color:#fff;
+    a{  
+        span.ct-head-font-color{color:@content_color;}
+    }
+    a.ct-head-a{color:@content_color !important;}
+    h1.ct-head-title{color:@title_color !important;}
+    a.ct-head-marrit{margin-right: 5px !important; color: @blue !important;}
+}
+    #submit{
+        width:100%; height:auto;background-color:#fff;padding:@spacing; overflow:hidden; box-sizing:border-box;
+        textarea{ 
+            width:100%; height:@spacing + 15; line-height:@spacing + .8; font-size:@font_size + .5;
+        }
+    }

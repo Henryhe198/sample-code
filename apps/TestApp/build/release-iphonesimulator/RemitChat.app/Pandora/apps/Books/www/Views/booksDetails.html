@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>书籍详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/gulp/mui.min.css" rel="stylesheet" type="text/css">
+		<link href="../../css/gulp/previewImage.css" rel="stylesheet" />
+		<link href="../../css/dist/DetailsTemplate.css" rel="stylesheet" />
+		<link href="../../css/dist/booksDetails.css" rel="stylesheet" type="text/css">
+		<script src="../../js/require.js" data-main="../../js/dist/books/booksDetails.js"></script>
+		<script type="text/javascript" src="../../js/gulp/adaptation/adaptation_10.js"></script>
+		<script type="text/javascript" src="../../js/gulp/consts/const.js"></script>
+	</head>
+
+	<body>
+		<!-- 侧滑导航根容器 -->
+		<div class="mui-off-canvas-wrap mui-draggable ct-canvas-bottom" id="books">
+			<!-- 菜单容器 -->
+			<aside class="mui-off-canvas-left" id="offCanvasSide">
+				<header class="mui-bar mui-bar-nav ct-head-fff ct-title-border">
+					<h1 class="mui-title">章节列表</h1>
+				</header>
+				<div class="mui-scroll-wrapper mui-content ct-scroll" id="menu-list">
+					<div class="mui-scroll">
+						<ul class="mui-table-view">
+							<li v-for="item in booksChapter" class="mui-table-view-cell mui-collapse mui-active">
+								<a class="mui-navigate-right" v-bind:data-id="item.ChapterId" href="#">{{item.ChapterTitle}}</a>
+								<div v-for="o in item.BookKnotList" v-bind:data-id="o.ChapterId" class="mui-collapse-content">
+									<p>{{o.ChapterTitle}}</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</aside>
+			<!-- 主页面容器 -->
+			<div class="mui-inner-wrap">
+				<!-- 主页面标题 -->
+				<div class="book-cont">
+					<header class="mui-bar mui-bar-nav book-top" style="display: none;">
+					<a class="mui-icon mui-icon-chat mui-pull-right ct-head-a ct-click-xq" v-bind:data-id="booksComments.BookId" v-cloak><em>{{booksComments.Comments > 99 ? "99+" : booksComments.Comments}}</em></a>
+					<a class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left ct-head-a ct-back">
+						<span class="mui-icon mui-icon-left-nav ct-head-font-color"></span>返回
+					</a>
+					<h1 class="mui-title ct-head-title ct-css-title" v-cloak>{{booksComments.BookName}}</h1>
+				</header>
+					<div class="book-content">
+						<div class="book-bar" v-cloak>
+							<h3>{{booksContent.ChapterTitle}}</h3>
+						</div>
+						<div class="mui-scroll-wrapper ct-back-scr">
+							<div class="mui-scroll">
+								<div class="book-html">
+									<div class="book-html-cont" id="bookContent" v-cloak>{{{booksContent.ChapterContent}}}</div>
+								</div>
+							</div>
+						</div>
+						<div class="book-bar2">
+							<div class="book-num" v-cloak><span id="ChapterIndex">{{sort}}</span>/<span id="ChapterIndexSize">{{chapterID.length ? chapterID.length - 1 :chapterID.length}}</span></div>
+						</div>
+					</div>
+					<div class="book-bottom" style="display:none;">
+						<div class="book-directory">
+							<a href="#offCanvasSide">目录</a>
+						</div>
+						<div class="book-font">Aa字体</div>
+						<div class="book-night">夜间</div>
+						<ul class="book-aa" style="display:none;">
+							<li>小字号<span v-bind:style="{display: fontSize != 'aamin' ? 'none' : ''}">✓</span></li>
+							<li>中字号（默认）<span v-bind:style="{display: fontSize ? 'none' : ''}">✓</span></li>
+							<li>大字号<span v-bind:style="{display: fontSize != 'aamax' ? 'none' : ''}">✓</span></li>
+						</ul>
+					</div>
+				</div>
+				<div class="mui-off-canvas-backdrop"></div>
+			</div>
+		</div>
+	</body>
+
+</html>

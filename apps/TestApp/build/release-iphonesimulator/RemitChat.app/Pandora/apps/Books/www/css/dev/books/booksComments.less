@@ -1,0 +1,81 @@
+@import (reference) "../../gulp/Animation.less"; 
+@import (less) "../../gulp/public.less";
+@font_size:1rem; //字体初始大小
+@line_height:1.2rem;//行高
+@spacing:1rem;//间距
+@title_color:#333A4F; //标题颜色
+@content_color:#545A64; // 内容颜色
+@gray:#909090;
+@blue:#2ea9df;
+@bgcolor:#f7f7f7;//背景颜色
+@default-size:1rem;
+body{background-color: #fff;}
+.ct-head-blue{ background-color:#fff;
+    a{  
+        span.ct-head-font-color{color:@content_color;}
+    }
+    a.ct-head-a{color:@content_color!important;}
+    h1.ct-head-title{color:@title_color !important;}
+}
+.ct-css-title{font-size: 2.2rem; font-weight:bold;}
+.ct-back{font-size:16px !important;
+    span{font-size:26px !important; font-weight: 100 !important;}
+    }
+.ct-back-scr{ background: #fff;}
+.book_comment_aots{
+             padding:@spacing + .5 0 @spacing + .5 @spacing + .5; position:relative;
+            h2{
+                font-size:@font_size + .7; color:#333a4f;margin-bottom:@spacing + .7;
+            }
+            .comment_read{
+                    position:relative;
+                    img{ position:absolute; left:0; top:0; width:@spacing + 3; height:@spacing + 3; border-radius:100%; }
+                    .comment{
+                        border-bottom:1px solid #f0f0f0; padding:@spacing - .4 @spacing + .3 @spacing  0; margin-top:@spacing + .3;
+                        h3{
+                            font-size:@font_size + .6;padding-left:@spacing + 3.9;
+                            i{font-size:@font_size + .3; color:@gray; margin-left:@spacing - .5;}
+                            span{ float:right; background:url(../../img/books/zambia.png) no-repeat 1px 1px; display:block; text-align:right;  background-size:@spacing + .4 auto; font-size:@font_size + .3; height: @spacing + .7;  color:#acb2c1; line-height:@spacing + 1; position:relative; padding-left:@spacing + .8;
+                            .book_jiayi{
+                                position:absolute; left:0; width:@spacing + 2; height:@spacing + .7; background:#2ea9df; color:#fff; border-radius:4px; text-align:center; line-height:@spacing + .6; opacity:0;display:block;
+                            }
+                            }
+
+                        }
+                        p{
+                            margin-top:@spacing - .4;  font-size:@font_size + .5; color:#545a64; overflow:hidden;padding-left:@spacing + 3.9;line-height:@spacing + 1.4;
+                        }
+                        p.activeshow{max-height:@spacing + 8.5;}
+                    .commetn_icon_show{
+                        text-align:center; overflow:hidden; color:#46b3e3;  height:@spacing + 1; display:none;margin-top:@spacing - .7;
+                            }
+                    .active_icon{display:block!important; background-size:@spacing + .7;}
+                    .active_s_icon{ background-size:@spacing + .7;}
+                    }
+
+                }
+}
+.publish_comment{
+    position:fixed; bottom:@spacing + .5; right:@spacing + .5;z-index: 999;
+    a{display:block;}
+    img{
+        width:@spacing + 2;
+    }
+}
+//点赞动画
+.animation{
+    animation:myfirst 0.8s;
+}
+@keyframes myfirst
+{
+10% {opacity:0.9; top:-@spacing - .2}
+20% {opacity:0.8; top:-@spacing - .4}
+30% {opacity:0.7; top:-@spacing - .5}
+40% {opacity:0.6; top:-@spacing - .6}
+50% {opacity:0.5; top:-@spacing - .8}
+60% {opacity:0.4; top:-@spacing - 1}
+70% {opacity:0.3; top:-@spacing - 1.2}
+80% {opacity:0.2; top:-@spacing - 1.4}
+90% {opacity:0.1; top:-@spacing - 1.5}
+100% {opacity:0; top:-@spacing - 1.5}
+}

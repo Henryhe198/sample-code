@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>书籍简介</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/gulp/mui.min.css" rel="stylesheet" type="text/css">
+		<link href="../css/dist/booksIntroduction.css" rel="stylesheet" type="text/css">
+		<script src="../js/require.js" data-main="../js/dist/books/booksIntroduction.js"></script>
+		<script type="text/javascript" src="../js/gulp/adaptation/adaptation_10.js"></script>
+		<script type="text/javascript" src="../js/gulp/consts/const.js"></script>
+	</head>
+
+	<body id="books" style="display: none">
+		<header class="mui-bar mui-bar-nav  ct-head-blue">
+			<a class="mui-icon mui-pull-right ct-head-a" id="share"><img height="24" src="../img/books/share.png"></a>
+			<a class="mui-action-back mui-btn mui-btn-blue mui-btn-link mui-btn-nav mui-pull-left ct-head-a ct-back">
+				<span class="mui-icon mui-icon-left-nav ct-head-font-color"></span>返回
+			</a>
+			<h1 class="mui-title ct-head-title ct-css-title">书籍简介</h1>
+		</header>
+		<span class="mui-progressbar mui-progressbar-in" id="domBar" style="z-index: 999;"><span style="background: #2EA9DF;"></span></span>
+		<div class="mui-content mui-scroll-wrapper ct-back-scr ct-scroll">
+			<div class="mui-scroll">
+				<div class="book_sty" v-cloak>
+					<div class="book_main">
+						<div class="book_img"><img v-bind:src="booksIntroduction.CoverImage"></div>
+						<div class="introduction">
+							<h2>{{booksIntroduction.BookName}}</h2>
+							<div class="at_name">{{booksIntroduction.Author}}</div>
+							<div class="book_recommend"><i class="book_stars_a"><img v-for="n in booksIntroduction.RecommendStar" src="../img/books/star-real.png"><img v-for="n in 5-booksIntroduction.RecommendStar" src="../img/books/star-gray.png">推荐度</i></div>
+							<div class="book_comment">{{booksIntroduction.Comments}}</div>
+						</div>
+					</div>
+				</div>
+				<div class="book_introduction_content">
+					<div class="book_introduction book_more" v-cloak>
+						<div class="introduction_img"><img src="../img/books/introduction.png"></div>
+						<p>{{booksIntroduction.Summary}}</p>
+					</div>
+				</div>
+				<div class="book_click_inconajx"><i class="mui-icon mui-icon-arrowdown"></i></div>
+				<div class="book_catalog">
+					<h2>目录</h2>
+					<div class="book_chapter book_more">
+						<div class="ct-click-booksli" v-for="item in booksChapter" v-cloak>
+							<h3 v-bind:data-id="item.ChapterId"><span></span>{{item.ChapterTitle}}</h3>
+							<ul>
+								<li v-for="o in item.BookKnotList" v-bind:data-id="o.ChapterId">{{o.ChapterTitle}}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="book_click_incon"><i class="mui-icon mui-icon-arrowdown"></i></div>
+				<div class="book_comment_aots">
+					<h2>读者评论</h2>
+					<div class="ajax_read" v-cloak>
+						<div class="comment_read" v-for="item in booksComments" v-bind:data-commentid="item.CommentId">
+							<img v-bind:src="item.UserHeadImg">
+							<div class="comment">
+								<h3 class="name">{{item.UserName}}<i>{{item.AddTime|time}}</i><span class="book_zag"><em v-if="item.Supports>0">{{item.Supports}}</em><strong class="book_jiayi">+1</strong></span></h3>
+								<p class="activeshow"><span>{{item.Content}}</span></p>
+								<div class="commetn_icon_show"><i class="mui-icon mui-icon-arrowdown"></i></div>
+							</div>
+						</div>
+					</div>
+					<div class="book_ment_nocomment" style="display:none">
+						<h2>暂无评论～</h2>
+						<h3>发表第一个评论</h3>
+					</div>
+					<div class="book_ment_more">更多评论</div>
+					<div class="book_ment_publish" style="display:none">
+						发表评论
+					</div>
+				</div>
+				<div class="book_relevant">
+					<h2>相关书籍</h2>
+					<div class="book_rele_show">
+						<ul id="relevantBooks" v-cloak>
+							<li v-for="item in booksRelevant" v-bind:data-id="item.BookId">
+								<img v-bind:src="item.CoverImage">
+								<h3>{{item.BookName}}</h3><span>{{item.Author}}</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="book_reading" v-bind:data-id="booksChapter[0].ChapterId">免费阅读</div>
+	</body>
+
+</html>

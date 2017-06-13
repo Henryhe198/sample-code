@@ -19,6 +19,7 @@ class SimpleIOSTests(unittest.TestCase):
                 'platformName': 'iOS',
                 'platformVersion': '10.1',
                 'deviceName': 'iPhone 6'
+                'automationName':'XCUITest'
             })
 
     def tearDown(self):
@@ -32,7 +33,7 @@ class SimpleIOSTests(unittest.TestCase):
         self._sum = 0
         for i in range(2):
             rnd = randint(0, 10)
-            els[i].send_keys(rnd)
+            els[i].set_value(rnd)
             self._sum += rnd
 
     def test_ui_computation(self):
